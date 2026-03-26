@@ -51,9 +51,11 @@ ZavetSec Vault is not a replacement for KeePass or Bitwarden — it occupies a d
 
 The structural risk with any cloud-based manager is that **your encrypted vault lives on someone else's server**. A single breach at the provider gives attackers unlimited offline time to brute-force your master password — no matter how good the encryption is.
 
-**Installed desktop apps introduce their own risks.** KeePass itself is trustworthy open-source software — it has been audited twice, including by the EU's FOSSA project. However, a documented 2024 campaign showed attackers distributing trojanized KeePass builds through fake websites promoted via legitimate ad networks. The malicious installers were signed with valid certificates, bypassing Windows warnings. Five distinct trojanized variants were found, all silently exfiltrating passwords to attacker servers. This is not a flaw in KeePass itself — it is the fundamental risk of downloading and installing binary software: **you must trust the source, the build process, and the update channel.**
+**Installed desktop apps introduce their own risks.** KeePass itself is trustworthy open-source software — it has been audited twice, including by the EU's FOSSA project. However, a documented 2024 campaign showed attackers distributing trojanized KeePass builds through fake websites promoted via legitimate ad networks. The malicious installers were signed with valid certificates, bypassing Windows warnings. Five distinct trojanized variants were found, all silently exfiltrating passwords to attacker servers. This is not a flaw in KeePass itself, and it is not unique to KeePass — it reflects the general software distribution risk that applies to any binary you download and execute. The attack surface exists regardless of how trustworthy the original project is.
 
-ZavetSec Vault eliminates both risks. There is no server to breach. There is no binary to trojanize. The entire codebase is a single human-readable HTML file — open it in a text editor and read every line before trusting it.
+Cloud-based managers can still be a reasonable choice when used with a strong master password, hardware 2FA, and an audited implementation. The risk is structural, not absolute — but it is real, and it scales with the value of what you store.
+
+ZavetSec Vault eliminates both risks. There is no server to breach. There is no binary to trojanize. The entire codebase is a single human-readable HTML file — open it in a text editor and read every line before trusting it. Small size makes manual review tractable, but readability alone does not guarantee security. No formal audit has been performed.
 
 ---
 
