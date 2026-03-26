@@ -35,13 +35,25 @@ Use the 💾 button in the toolbar to export a `.vault` file — an AES-encrypte
 | Installation | **None** | Required | Required | Required |
 | Dependencies | **Zero** | .NET / Mono | Electron | Electron |
 | Cloud | **Never** | Optional | On by default | On by default |
+| Network activity | **None** | Update checks | Sync to cloud | Sync to cloud |
 | Open source | ✓ | ✓ | ✓ | ✗ |
 | Works fully offline | ✓ | ✓ | Partial | Partial |
 | KeePass XML import/export | ✓ | — | ✓ | ✓ |
 | Codebase size | **~1,400 lines, 1 file** | Large ecosystem | Large ecosystem | Closed |
 | Interface language | RU + EN | Multi | Multi | Multi |
+| Known breaches | None | None (see note) | None | None |
 
 ZavetSec Vault is not a replacement for KeePass or Bitwarden — it occupies a different niche: **maximum simplicity and zero installation friction**, at the cost of being browser-bound. Choose the tool that fits your threat model.
+
+### Why "no cloud" matters more than it sounds
+
+**Cloud-based managers are a high-value target.** In 2022, LastPass — one of the world's most popular password managers — suffered a breach where attackers exfiltrated encrypted vault backups for millions of users. By 2025, blockchain investigators traced over **$150 million in cryptocurrency theft** directly to those stolen vaults, with attacks still ongoing as weak master passwords continue to be cracked offline. The breach resulted in LastPass being fined £1.6 million by the UK ICO.
+
+The structural risk with any cloud-based manager is that **your encrypted vault lives on someone else's server**. A single breach at the provider gives attackers unlimited offline time to brute-force your master password — no matter how good the encryption is.
+
+**Installed desktop apps introduce their own risks.** KeePass itself is trustworthy open-source software — it has been audited twice, including by the EU's FOSSA project. However, a documented 2024 campaign showed attackers distributing trojanized KeePass builds through fake websites promoted via legitimate ad networks. The malicious installers were signed with valid certificates, bypassing Windows warnings. Five distinct trojanized variants were found, all silently exfiltrating passwords to attacker servers. This is not a flaw in KeePass itself — it is the fundamental risk of downloading and installing binary software: **you must trust the source, the build process, and the update channel.**
+
+ZavetSec Vault eliminates both risks. There is no server to breach. There is no binary to trojanize. The entire codebase is a single human-readable HTML file — open it in a text editor and read every line before trusting it.
 
 ---
 
