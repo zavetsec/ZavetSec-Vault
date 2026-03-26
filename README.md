@@ -1,6 +1,6 @@
 # ZavetSec Vault
 
-> Single-file offline password manager. ~70 KB. No install. No cloud. AES-256-GCM.
+> Single-file offline password manager using Web Crypto (AES-256-GCM). No install, no cloud, portable HTML vault.
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![Crypto](https://img.shields.io/badge/crypto-AES--256--GCM-green) ![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen) ![Size](https://img.shields.io/badge/size-~70KB-lightgrey) ![Languages](https://img.shields.io/badge/lang-RU%20%7C%20EN-informational)
 
